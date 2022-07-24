@@ -1,0 +1,42 @@
+.container {
+  max-width: 400px;
+  min-width: 280px;
+  margin: 0 auto;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .list-item {
+    font-size: 16px;
+    div {
+      display: flex;
+      justify-content: space-between;
+      .buttons {
+        display: flex;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+.todo-form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  input {
+    width: 100%;
+    padding-right: 5px;
+  }
+}
+
+.item-title {
+  margin-right: 10px;
+  word-wrap: break-word;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  // height: 40px;
+}
+
