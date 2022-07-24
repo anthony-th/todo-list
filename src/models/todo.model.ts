@@ -1,6 +1,6 @@
 import { Guid } from 'guid-typescript';
 
-export class Todo {
+export class TodoArr {
   constructor(
     public id: Guid,
     public title: string,

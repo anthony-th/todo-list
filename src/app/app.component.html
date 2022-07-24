@@ -1,11 +1,12 @@
-<div class="div">
 <div class="container">
   <h1>ToDo List</h1>
 
   <form class="todo-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
-      <input type="text" id="title" name="title" ngModel>
+      <input type="text" id="title" name="title" ngModel placeholder="Write your todo">
     <div>
-      <button type="submit" class="btn-floating waves-effect waves-light green"><i class="material-icons">add</i></button>
+      <button type="submit" class="btn-floating waves-effect waves-light deep-orange lighten-2">
+        <i class="material-icons">add</i>
+      </button>
     </div>
   </form>
 
@@ -14,8 +15,12 @@
       <div *ngIf="!this.todo.isComplete">
         <div class="item-title">{{this.todo.title}}</div>
         <div class="buttons">
-          <button (click)="onComplete(this.todo.id)" class="btn-floating waves-effect waves-light blue"><i class="material-icons">check</i></button>
-          <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
+          <button (click)="onComplete(this.todo.id)" class="btn-floating waves-effect waves-light teal accent-4">
+            <i class="material-icons">check</i>
+          </button>
+          <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light brown darken-2">
+            <i class="material-icons">delete</i>
+          </button>
         </div>
       </div>
     </li>
@@ -24,10 +29,11 @@
       <div *ngIf="this.todo.isComplete">
         <div class="item-title completed">{{this.todo.title}}</div>
         <div>
-          <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
+          <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light brown darken-2">
+            <i class="material-icons">delete</i>
+          </button>
         </div>
       </div>
     </li>
   </ul>
-</div>
 </div>

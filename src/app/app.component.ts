@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Guid } from "guid-typescript";
-import { Todo } from 'src/models/todo.model';
+import { TodoArr } from 'src/models/todo.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  todos: Todo[] = [
-    new Todo(Guid.create(), 'Wash Car', false),
-    new Todo(Guid.create(), 'Buy Groceries', false),
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  todos: TodoArr[] = [
+    new TodoArr(Guid.create(), 'Turn on the computer', false),
+    new TodoArr(Guid.create(), 'Read something in English for one hour (minimum)', false),
+    new TodoArr(Guid.create(), 'Study MDN all your free time', true), 
+    new TodoArr(Guid.create(), 'Turn off the computer and go to sleep', false),
+    new TodoArr(Guid.create(), 'Repeat the previous day', false),
   ]
 
   onSubmit(form: NgForm) {
@@ -19,7 +26,7 @@ export class AppComponent {
       alert('Your todo is empty');
     }
     if (form.value.title) {
-      let todo = new Todo(Guid.create(), form.value.title, false);
+      let todo = new TodoArr(Guid.create(), form.value.title, false);
       this.todos.push(todo);
       form.resetForm();
     }

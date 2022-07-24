@@ -1,25 +1,39 @@
 .container {
-  max-width: 400px;
+  max-width: 800px;
   min-width: 280px;
-  margin: 0 auto;
-  background-image: url('../assets/background.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 30px;
+  margin: 30px auto 0;
+  background: rgba($color: #eddcd2, $alpha: 1);
+  height: max-content;
+  border-radius: 2em;
+  padding: 20px 35px;
+  h1 {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    margin-top: 25px;
+    background: url('../assets/pen.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: right center;
+  }
 }
 
 .todo-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  h5 {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-size: 2em;
+  }
   .list-item {
-    font-size: 16px;
+    color: rgba($color: #000000, $alpha: 0.6);
+    line-height: 2.6em;
+    font-size: 1.3em;
     div {
       display: flex;
       justify-content: space-between;
       .buttons {
-        display: flex;
-        gap: 5px;
+        margin-top: 0.35em;
+        justify-content: space-between;
+        gap: 8px;
       }
     }
   }
@@ -31,7 +45,12 @@
   justify-content: space-between;
   input {
     width: 100%;
-    padding-right: 5px;
+    margin-right: 15px;
+    font-size: 1.3em;
+    
+  }
+  input::placeholder {
+    color: rgba($color: #000000, $alpha: 0.6);
   }
 }
 
@@ -41,6 +60,23 @@
   overflow: auto;
   display: flex;
   align-items: center;
-  // height: 40px;
 }
 
+@media screen and (max-width:550px) {
+  .container {
+    h1 {
+      background: url('../assets/mini-pen.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+  }
+}
+
+@media screen and (max-width:376px) {
+  .container {
+    h1 {
+      background: none;
+    }
+  }
+}
