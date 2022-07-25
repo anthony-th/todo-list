@@ -16,16 +16,19 @@ export class AppComponent {
   todos: TodoArr[] = [
     new TodoArr(Guid.create(), 'Turn on the computer', false),
     new TodoArr(Guid.create(), 'Read something in English for one hour (minimum)', false),
-    new TodoArr(Guid.create(), 'Study MDN all your free time', true), 
+    new TodoArr(Guid.create(), 'Study MDN all your free time', false), 
     new TodoArr(Guid.create(), 'Turn off the computer and go to sleep', false),
     new TodoArr(Guid.create(), 'Repeat the previous day', false),
+    new TodoArr(Guid.create(), 'Sleep more than 5 hours', true),
   ]
 
   onSubmit(form: NgForm) {
     if (!form.value.title) {
       alert('Your todo is empty');
     }
-    if (form.value.title) {
+    else if (form.value.title.replace(/\s/g,"") == "") {
+      alert('your todo have only space');
+    } else {
       let todo = new TodoArr(Guid.create(), form.value.title, false);
       this.todos.push(todo);
       form.resetForm();
