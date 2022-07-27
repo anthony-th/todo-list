@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, ViewEncapsulation } from "@angular/core";
+import { NgForm } from "@angular/forms";
 import { Guid } from "guid-typescript";
 import { TodoArr } from 'src/models/todo.model';
 

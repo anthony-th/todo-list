@@ -19,10 +19,6 @@
 .todo-list {
   display: flex;
   flex-direction: column;
-  h5 {
-    font-family: 'Edu VIC WA NT Beginner', cursive;
-    font-size: 2em;
-  }
   .list-item {
     color: rgba($color: #000000, $alpha: 0.6);
     line-height: 2.6em;
@@ -47,7 +43,6 @@
     width: 100%;
     margin-right: 15px;
     font-size: 1.3em;
-    
   }
   input::placeholder {
     color: rgba($color: #000000, $alpha: 0.6);
@@ -79,4 +74,17 @@
       background: none;
     }
   }
+}
+
+.mat-tab-label-content {
+  font-size: 1.25em;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #ff8a65;
+}
+
+.mat-tab-group {
+  margin: 12px 0 0;
 }

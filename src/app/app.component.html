@@ -9,31 +9,68 @@
       </button>
     </div>
   </form>
-
-  <ul class="todo-list">
-    <li class="list-item" *ngFor="let todo of todos">
-      <div *ngIf="!this.todo.isComplete">
-        <div class="item-title">{{this.todo.title}}</div>
-        <div class="buttons">
-          <button (click)="onComplete(this.todo.id)" class="btn-floating waves-effect waves-light teal accent-4">
-            <i class="material-icons">check</i>
-          </button>
-          <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light brown darken-2">
-            <i class="material-icons">delete</i>
-          </button>
-        </div>
-      </div>
-    </li>
-    <h5>Completed List</h5>
-    <li class="list-item" *ngFor="let todo of todos">
-      <div *ngIf="this.todo.isComplete">
-        <div class="item-title completed">{{this.todo.title}}</div>
-        <div>
-          <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light brown darken-2">
-            <i class="material-icons">delete</i>
-          </button>
-        </div>
-      </div>
-    </li>
-  </ul>
+  <mat-tab-group>
+    <mat-tab label="Todo all"> 
+      <ul class="todo-list">
+        <li class="list-item" *ngFor="let todo of todos">
+          <div *ngIf="!this.todo.isComplete">
+            <div class="item-title">{{this.todo.title}}</div>
+            <div class="buttons">
+              <button (click)="onComplete(this.todo.id)" class="btn-floating waves-effect waves-light teal accent-4">
+                <i class="material-icons">check</i>
+              </button>
+              <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light brown darken-2">
+                <i class="material-icons">delete</i>
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="list-item" *ngFor="let todo of todos">
+          <div *ngIf="this.todo.isComplete">
+            <div class="item-title completed">{{this.todo.title}}</div>
+            <div>
+              <div class="buttons">
+                <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light brown darken-2">
+                  <i class="material-icons">delete</i>
+                </button>
+              </div>  
+            </div>
+          </div>
+        </li>
+      </ul>
+    </mat-tab>
+    <mat-tab label="Not complete">
+      <ul class="todo-list">
+        <li class="list-item" *ngFor="let todo of todos">
+          <div *ngIf="!this.todo.isComplete">
+            <div class="item-title">{{this.todo.title}}</div>
+            <div class="buttons">
+              <button (click)="onComplete(this.todo.id)" class="btn-floating waves-effect waves-light teal accent-4">
+                <i class="material-icons">check</i>
+              </button>
+              <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light brown darken-2">
+                <i class="material-icons">delete</i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </mat-tab>
+    <mat-tab label="Completed List">
+      <ul class="todo-list">
+        <li class="list-item" *ngFor="let todo of todos">
+          <div *ngIf="this.todo.isComplete">
+            <div class="item-title completed">{{this.todo.title}}</div>
+            <div>
+              <div class="buttons">
+                <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light brown darken-2">
+                  <i class="material-icons">delete</i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </mat-tab>
+  </mat-tab-group>
 </div>
